@@ -244,3 +244,39 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 { "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
 ```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+I-2_10_PA	PA/PR dwupozycyjny z narzutem do podsumy i storno pierwszej pozycji
+I-2_10_PR
+================================================================================
+Wystawić PA/PR na 2 towary z cena 1 PLN: 
+- 1,00* Towar-A,
+- 1,00* Towar-C.
+Zastosować narzut do podsumy 4 PLN.
+Wystornować Towar-A.
+[w drukarkach fiskalnych moze byc konieczne reczne stornowanie narzutu].
+
+Platnosc gotowka w kwocie 3 PLN.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+1. komenda po komendzie
+```
+{ "commandType": 16 }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 25, "commandInput": { "name": "Narzut do podsumy", "discount_type": 1, "discount_unit": 1, "value": 4 } }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": true, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 3, "payment_without_terminal": true } }
+```
+```
+{ "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
+```
