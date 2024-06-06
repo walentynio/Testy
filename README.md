@@ -57,7 +57,7 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 
 1. Zaprogramować w badanej kasie następujące stawki PTU ("-" oznacza stawkę niezaprogramowaną):
 ```
-{ "commandInput": { "A": { "type": 0, "value": 23 }, "B": { "type": 0, "value": 8 }, "C": { "type": 0, "value": 3 }, "D": { "type": 1, "value": 0 }, "E": { "type": 0, "value": 0 }, "F": { "type": 0, "value": 1 }, "G": { "type": 0, "value": 2 } }, "commandType": 3 }
+{ "commandInput": { "A": { "type": 0, "value": 23 }, "B": { "type": 0, "value": 8 }, "C": { "type": 0, "value": 3 }, "D": { "type": 1, "value": 0 }, "E": { "type": 2, "value": 0 }, "F": { "type": 2, "value": 0 }, "G": { "type": 2, "value": 0 } }, "commandType": 3 }
 ```
 2. Wystawic PA/PR na 4 towary, kazdy towar w innej stawce z iloscia 1,00 i z ceną 1 PLN. 
 ```
