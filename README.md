@@ -155,3 +155,35 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 { "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 9, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 6, "name": "Towar-D", "price": 1, "ptu": "D", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "4": { "commandInput": { "name": "Opust", "discount_type": 0, "discount_unit": 1, "value": 7 }, "commandType": 25 }, "5": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 8, "payment_without_terminal": true }, "commandType": 24 }, "6": {"commandType": 26} } }
 ```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+Wystawić PA/PR na 2 towary, oba z cena 1 PLN:
+- 1,00* Towar-A, zastosowac narzut 5 PLN do pozycji,
+- 10,00* Towar-C, zastosowac opust 40% od pozycji.
+Zastosowac narzut 20 PLN do podsumy,
+Zastosowac opust 50% od podsumy. 
+Platnosc gotowka w kwocie 16 PLN, wplata 20 PLN (oczekiwana reszta 4 PLN).
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+
+1. wprowadzać komenda po komendzie
+```
+{ "commandType": 16 }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "name": "Towar-A", "price": 1.00, "count": 1.00, "ptu": "A", "discount": { "name": "NARZUT", "type": 1, "unit": 1, "value": 5.00 } }, "type": 1 } }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "name": "Towar-C", "price": 1.00, "count": 10.00, "ptu": "C", "discount": { "name": "OPUST", "type": 0, "unit": 0, "value": 40.00 } }, "type": 1 } }
+```
+```
+{ "commandType": 25, "commandInput": { "name": "NARZUT", "discount_type": 1, "discount_unit": 1, "value": 20.00 } }
+```
+```
+{ "commandType": 25, "commandInput": { "name": "OPUST", "discount_type": 0, "discount_unit": 0, "value": 50.00 } }
+```
+```
+{ "commandType": 24, "commandInput": { "payment_type": 1, "value": 16.00 } }
+```
+```
+{ "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
+```
