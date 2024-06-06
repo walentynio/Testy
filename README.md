@@ -140,3 +140,18 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 { "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-B", "price": 1, "ptu": "B", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "4": { "commandInput": { "name": "Narzut", "discount_type": 1, "discount_unit": 1, "value": 5 }, "commandType": 25 }, "5": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 7, "payment_without_terminal": true }, "commandType": 24 }, "6": {"commandType": 26} } }
 ```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+I-2_06_PA	PA/PR z Towar-C, Towar-D i opustem od podsumy
+I-2_06_PR
+================================================================================
+Wystawić PA/PR na 2 towary, oba z cena 1 PLN:
+- 9,00* Towar-C,
+- 6,00* TOWAR-D.
+Zastosowac opust 7 PLN do podsumy.
+Platnosc gotowka w kwocie 8 PLN.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+1. komenda do wprowadzenia
+```
+{ "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 9, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 6, "name": "Towar-D", "price": 1, "ptu": "D", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "4": { "commandInput": { "name": "Opust", "discount_type": 0, "discount_unit": 1, "value": 7 }, "commandType": 25 }, "5": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 8, "payment_without_terminal": true }, "commandType": 24 }, "6": {"commandType": 26} } }
+```
