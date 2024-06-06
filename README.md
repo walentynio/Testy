@@ -343,3 +343,98 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 { "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": -1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "szt" }, "type": 2 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": {"name": "paymentName", "payment_type": 1, "value": 9, "payment_without_terminal": true }, "commandType": 24 }, "4": { "commandInput": {"canceled": false}, "commandType": 26, "print": true, "returnPDF": false, "returnQR": true } } }
 ```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+Wystawić PA/PR na 1,00* Towar-A z cena 1 PLN.
+Wystornowac Towar-A.
+Dokonac wydania 1 sztuki opakowania zwrotnego na kwote 10 PLN.
+Dokonac zwrotu 1 sztuki opakowania zwrotnego na kwote 10 PLN.
+Suma paragonu 0 PLN, platnosc gotowka w kwocie 0 PLN.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+
+```
+{ "commandType": 16 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": false, "count": 1.0, "name": "Towar-A", "price": 1.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": true, "count": 1.0, "name": "Towar-A", "price": 1.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": false, "count": 1.0, "name": "Opakowanie zwrotne", "price": 10.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": true, "count": 1.0, "name": "Opakowanie zwrotne", "price": 10.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "payment_type": 1, "value": 0.0 }, "commandType": 24 }
+```
+```
+{ "commandInput": { "canceled": false }, "commandType": 26, "print": true, "returnPDF": false }
+```
+=============================================================================================================================================================================================================================================================================================================
+I-2_15_PA	PA - paragon całkowicie wystornowany i następnie anulowany
+================================================================================
+Wystawić paragon na 1,00* Towar-A z cena 1 PLN.
+Wystornowac Towar-A.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+```
+{ "commandType": 16 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": false, "count": 1.0, "name": "Towar-A", "price": 1.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": true, "count": 1.0, "name": "Towar-A", "price": 1.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "payment_type": 1, "value": 1.0 }, "commandType": 24 }
+```
+```
+{ "commandInput": { "canceled": false }, "commandType": 26, "print": true, "returnPDF": false }
+```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+I-2_16_PA...	PA/PR z max dopuszczalna wartoscia jednej pozycji paragonu
+                      (dodatkowo z max wartoscia paragonu, jesli jest wieksza)
+I-2_16_PR...
+I-2_16_RFDpoPA...
+I-2_16_RFDpoPR...
+
+1.
+```
+{ "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "ProduktMaxValue", "price": 999999.99, "ptu": "A", "unit": "szt" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 999999.99, "payment_without_terminal": true } }, "4": { "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true } } }
+```
+2,3,4) 
+```
+{ "commandType": 11, "commandInput": { "print": true, "returnPDF": false, "sales_system_name": "Nazwa programu POS", "sales_system_version": "Wersja programu POS" } }
+```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+Wykonać RFD.
+Wystawic paragon na 1,00* Towar-A z cena MAX
+Wykonać RFD.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+
+```
+{ "commandType": 16 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": false, "count": 1.0, "name": "Towar-A", "price": 99999999.99, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "payment_type": 1, "value": 99999999.99 }, "commandType": 24 }
+```
+```
+{ "commandInput": { "canceled": false }, "commandType": 26, "print": true, "returnPDF": false }
+```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+Wykonać RFD.
+Wystawic paragon (lub kilka paragonow) na 1,00* Towar-A do wypelnienia totalizera dobowego w stawce A.
+Wykonać RFD.
+Wystawić paragon anulowany (lub kilka paragonow anulowanych) na 1,00* Towar-A do wypelnienia totalizera dobowego w stawce A.
+Wykonać RFD.
+
+===============================================================================
