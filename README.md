@@ -87,7 +87,7 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 { "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "szt" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
 ```
 ```
-{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": true, "count": 1, "name": "Towar-B", "price": 1, "ptu": "B", "unit": "szt" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-B", "price": 1, "ptu": "B", "unit": "szt" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
 ```
 ```
 { "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": true, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "szt" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
@@ -99,3 +99,14 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 { "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
 ```
 =============================================================================================================================================================================================================================================================================================================
+================================================================================
+I-2_03_PA	PA/PR z Towar-A i narzutem do pozycji i z reszta
+I-2_03_PR
+================================================================================
+Wystawić PA/PR na 1,00* Towar-A, z cena 1 PLN, zastosowac narzut 5 PLN do pozycji.
+Platnosc gotowka w kwocie 6 PLN, wplata 10 PLN (oczekiwana reszta 4 PLN).
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+1. komenda do wprowadzenia
+```
+{ "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "", "discount": {"name": "Narzut", "type": 1, "unit": 0, "value": 5} }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 6, "payment_without_terminal": true }, "commandType": 24 }, "4": {"commandType": 26} } }
+```
