@@ -179,7 +179,7 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 { "commandType": 25, "commandInput": { "name": "NARZUT", "discount_type": 1, "discount_unit": 1, "value": 20.00 } }
 ```
 ```
-{ "commandType": 25, "commandInput": { "name": "OPUST", "discount_type": 0, "discount_unit": 0, "value": 50.00 } }
+{ "commandType": 25, "commandInput": { "name": "OPUST", "discount_type": 0, "discount_unit": 1, "value": 16 } }
 ```
 ```
 { "commandType": 24, "commandInput": { "payment_type": 1, "value": 16.00 } }
