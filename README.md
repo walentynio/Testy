@@ -247,7 +247,7 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 =============================================================================================================================================================================================================================================================================================================
 ================================================================================
 I-2_10_PA	PA/PR dwupozycyjny z narzutem do podsumy i storno pierwszej pozycji
-I-2_10_PR
+I-2_10_PR DO WERYFIKACJI
 ================================================================================
 Wystawić PA/PR na 2 towary z cena 1 PLN: 
 - 1,00* Towar-A,
@@ -280,4 +280,53 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 
 ```
 { "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
+```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+I-2_11_PA	PA/PR dwupozycyjny z rabatem od podsumy i storno pierwszej pozycji
+I-2_11_PR
+================================================================================
+Wystawić PA/PR na 2 towary z cena 1 PLN:
+- 1,00* Towar-B,
+- 10,00* Towar-D.
+Zastosować opust od podsumy 50%.
+Wystornować Towar-B.
+[w drukarkach fiskalnych moze byc konieczne reczne stornowanie rabatu].
+
+Platnosc gotowka w kwocie 5 PLN.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+1. komenda po komendzie
+```
+{ "commandType": 16 }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-B", "price": 1, "ptu": "B", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 10, "name": "Towar-D", "price": 1, "ptu": "D", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 25, "commandInput": { "name": "Opust do podsumy", "discount_type": 0, "discount_unit": 0, "value": 50 } }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": true, "count": 1, "name": "Towar-B", "price": 1, "ptu": "B", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 5, "payment_without_terminal": true } }
+```
+```
+{ "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
+```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+I-2_12_PA	PA/PR z wydaniem opakowan zwrotnych
+I-2_12_PR
+================================================================================
+Wystawić PA/PR na 1,00* Towar-A z cena 1 PLN.
+Dokonac wydania 1 sztuki opakowania zwrotnego na kwote 10 PLN.
+Suma paragonu 1 PLN, platnosc gotowka w kwocie 11 PLN.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+1
+```
+{ "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 10, "ptu": "A", "unit": "szt" }, "type": 2 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 11, "payment_without_terminal": true }, "commandType": 24 }, "4": { "commandInput": { "canceled": false }, "commandType": 26, "print": true, "returnPDF": false, "returnQR": true } } }
 ```
