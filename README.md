@@ -125,3 +125,18 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 { "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 9, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "", "discount": {"name": "Opust", "type": 0, "unit": 1, "value": 3} }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 10, "payment_without_terminal": true }, "commandType": 24 }, "4": {"commandType": 26} } }
 ```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+I-2_05_PA	PA/PR z Towar-A, TOWAR-B i narzutem do podsumy
+I-2_05_PR
+================================================================================
+Wystawić PA/PR na 2 towary, oba z cena 1 PLN:
+- 1,00* Towar-A,
+- 1,00* Towar-B.
+Zastosowac narzut 5 PLN do podsumy.
+Platnosc gotowka w kwocie 7 PLN.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+1. komenda do wprowadzenia
+```
+{ "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-B", "price": 1, "ptu": "B", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "4": { "commandInput": { "name": "Narzut", "discount_type": 1, "discount_unit": 0, "value": 5 }, "commandType": 25 }, "5": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 7, "payment_without_terminal": true }, "commandType": 24 }, "6": {"commandType": 26} } }
+```
