@@ -164,7 +164,7 @@ Zastosowac narzut 20 PLN do podsumy,
 Zastosowac opust 50% od podsumy. 
 Platnosc gotowka w kwocie 16 PLN, wplata 20 PLN (oczekiwana reszta 4 PLN).
 Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
-
+//Komentarz: nie mozemy dawać więcej niż 1 rabat do paragonu
 1. wprowadzać komenda po komendzie
 ```
 { "commandType": 16 }
@@ -176,13 +176,40 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 { "commandType": 22, "commandInput": { "item": { "name": "Towar-C", "price": 1.00, "count": 10.00, "ptu": "C", "discount": { "name": "OPUST", "type": 0, "unit": 0, "value": 40.00 } }, "type": 1 } }
 ```
 ```
-{ "commandType": 25, "commandInput": { "name": "NARZUT", "discount_type": 1, "discount_unit": 1, "value": 20.00 } }
+{ "commandType": 25, "commandInput": { "name": "NARZUT", "discount_type": 1, "discount_unit": 1, "value": 4 } }
 ```
 ```
-{ "commandType": 25, "commandInput": { "name": "OPUST", "discount_type": 0, "discount_unit": 1, "value": 16 } }
+{ "commandType": 24, "commandInput": { "payment_type": 1, "value": 20.00 } }
 ```
 ```
-{ "commandType": 24, "commandInput": { "payment_type": 1, "value": 16.00 } }
+{ "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
+```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+I-2_08_PA	PA/PR dwupozycyjny z narzutem do drugiej pozycji i storno tej pozycji
+I-2_08_PR
+================================================================================
+Wystawić PA/PR na 2 towary z cena 1 PLN: 
+- 1,00* Towar-A,
+- 1,00* Towar-C, z narzutem 5 PLN.
+Wystornować Towar-C.
+Platnosc gotowka w kwocie 1 PLN.
+Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+1. komenda po komendzie
+```
+  {"commandType": 16}
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "name": "Towar-C", "price": 1.00, "count": 1.00, "ptu": "C", "discount": { "name": "NARZUT", "type": 1, "unit": 1, "value": 5 } }, "type": 1 } }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": true, "count": 1, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "", "discount": { "name": "Narzut do pozycji", "type": 1, "unit": 1, "value": 5 } }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 1, "payment_without_terminal": true } }
 ```
 ```
 { "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
