@@ -262,6 +262,9 @@ Wystornować Towar-A.
 
 Platnosc gotowka w kwocie 3 PLN.
 Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+
+//Nie mamy mozlowisci robić stornowanie rabatu
+
 1. komenda po komendzie
 ```
 { "commandType": 16 }
@@ -302,6 +305,9 @@ Wystornować Towar-B.
 
 Platnosc gotowka w kwocie 5 PLN.
 Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
+
+//Nie mamy mozlowisci robić stornowanie rabatu
+
 1. komenda po komendzie
 ```
 { "commandType": 16 }
