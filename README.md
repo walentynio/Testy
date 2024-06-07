@@ -455,18 +455,57 @@ Wystawić paragon anulowany (lub kilka paragonow anulowanych) na 1,00* Towar-A d
 Wykonać RFD.
 
 ===============================================================================
+Wykonać RFD.
 ```
 { "commandType": 11, "commandInput": { "print": true, "returnPDF": false, "sales_system_name": "Nazwa programu POS", "sales_system_version": "Wersja programu POS" } }
 ```
+Wystawic paragon (lub kilka paragonow) na 1,00* Towar-A do wypelnienia totalizera dobowego w stawce A.
 ```
 { "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 1, "payment_without_terminal": true } }, "4": { "commandType": 26, "commandInput": {"canceled": false}, "print": true, "returnPDF": false, "returnQR": true } } }
 ```
+Wykonać RFD.
 ```
 { "commandType": 11, "commandInput": { "print": true, "returnPDF": false, "sales_system_name": "Nazwa programu POS", "sales_system_version": "Wersja programu POS" } }
 ```
+Wystawić paragon anulowany (lub kilka paragonow anulowanych) na 1,00* Towar-A do wypelnienia totalizera dobowego w stawce A.
 ```
 { "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 1, "payment_without_terminal": true } }, "4": { "commandType": 26, "commandInput": {"canceled": true}, "print": true, "returnPDF": false, "returnQR": true } } }
 ```
+Wykonać RFD.
 ```
 { "commandType": 11, "commandInput": { "print": true, "returnPDF": false, "sales_system_name": "Nazwa programu POS", "sales_system_version": "Wersja programu POS" } }
+```
+=============================================================================================================================================================================================================================================================================================================
+================================================================================
+RFD Nr1
+================================================================================
+PARAGON FISKALNY Nr 1
+===============================================================================
+```
+{ "commandType": 16 }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 2, "name": "TOWAR_1_1", "price": 0.01, "ptu": "A", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 3, "name": "TOWAR_1_2", "price": 0.01, "ptu": "B", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 4, "name": "TOWAR_1_3", "price": 0.01, "ptu": "C", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 5, "name": "TOWAR_1_4", "price": 0.01, "ptu": "D", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "TOWAR_1_5", "price": 0.01, "ptu": "E", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "TOWAR_1_6", "price": 0.01, "ptu": "F", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 10, "name": "TOWAR_1_7", "price": 0.01, "ptu": "G", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+
+```
+{ "commandType": 30, "commandInput": { "1": { "commandType": 16 }, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 2, "name": "TOWAR_1_1", "price": 0.01, "ptu": "A", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 3, "name": "TOWAR_1_2", "price": 0.01, "ptu": "B", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "4": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 4, "name": "TOWAR_1_3", "price": 0.01, "ptu": "C", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "5": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 5, "name": "TOWAR_1_4", "price": 0.01, "ptu": "D", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "6": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "TOWAR_1_5", "price": 0.01, "ptu": "E", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "7": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "TOWAR_1_6", "price": 0.01, "ptu": "F", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "8": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 10, "name": "TOWAR_1_7", "price": 0.01, "ptu": "G", "unit": "" }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false } }, "print": true, "returnPDF": false, "returnQR": true }
 ```
