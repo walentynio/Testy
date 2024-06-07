@@ -273,10 +273,13 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 { "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
 ```
 ```
+{ "commandType": 25, "commandInput": { "name": "Narzut do podsumy", "discount_type": 1, "discount_unit": 1, "value": 4 } }
+```
+```
 { "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": true, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
 ```
 ```
-{ "commandType": 25, "commandInput": { "name": "Narzut do podsumy", "canceled": true, "discount_type": 1, "discount_unit": 1, "value": 4 } }
+{ "commandType": 25, "commandInput": { "name": "Narzut do podsumy", "canceled": true, "discount_type": 1, "discount_unit": 1, "value": -4 } }
 ```
 ```
 { "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 3, "payment_without_terminal": true } }
