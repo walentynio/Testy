@@ -207,6 +207,26 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 { "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
 ```
+Paragon anulowany 
+
+```
+{ "commandType": 16 }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "name": "Towar-A", "price": 1.00, "count": 1.00, "ptu": "A", "discount": { "name": "NARZUT", "type": 1, "unit": 1, "value": 5.00 } }, "type": 1 } }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "name": "Towar-C", "price": 1.00, "count": 10.00, "ptu": "C", "discount": { "name": "OPUST", "type": 0, "unit": 0, "value": 40.00 } }, "type": 1 } }
+```
+```
+{ "commandType": 25, "commandInput": { "name": "NARZUT", "discount_type": 1, "discount_unit": 1, "value": 4 } }
+```
+```
+{ "commandType": 24, "commandInput": { "payment_type": 1, "value": 20.00 } }
+```
+```
+{ "commandType": 26, "commandInput": { "canceled": true }, "print": true, "returnPDF": false, "returnQR": true }
+```
 =============================================================================================================================================================================================================================================================================================================
 ================================================================================
 I-2_08_PA	PA/PR dwupozycyjny z narzutem do drugiej pozycji i storno tej pozycji
