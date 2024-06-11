@@ -257,6 +257,27 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 { "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
 ```
+Paragon Anulowany
+
+```
+  {"commandType": 16}
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-A", "price": 1, "ptu": "A", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "name": "Towar-C", "price": 1.00, "count": 1.00, "ptu": "C", "discount": { "name": "NARZUT", "type": 1, "unit": 1, "value": 5 } }, "type": 1 } }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": true, "count": 1, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "", "discount": { "name": "Narzut do pozycji", "type": 1, "unit": 1, "value": 5 } }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 1, "payment_without_terminal": true } }
+```
+```
+{ "commandType": 26, "commandInput": { "canceled": true }, "print": true, "returnPDF": false, "returnQR": true }
+```
+
 =============================================================================================================================================================================================================================================================================================================
 ================================================================================
 I-2_09_PA	PA/PR dwupozycyjny z opustem od drugiej pozycji i storno tej pozycji
@@ -286,6 +307,26 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 ```
 { "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
+```
+Paragon Anulowany 
+
+```
+{ "commandType": 16 }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 1, "name": "Towar-B", "price": 1, "ptu": "B", "unit": "" }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 10, "name": "Towar-D", "price": 1, "ptu": "D", "unit": "", "discount": { "name": "Opust do pozycji", "type": 0, "unit": 0, "value": 50 } }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 22, "commandInput": { "item": { "advanceRemain": 0, "canceled": true, "count": 10, "name": "Towar-D", "price": 1, "ptu": "D", "unit": "", "discount": { "name": "Opust do pozycji", "type": 0, "unit": 0, "value": 50 } }, "type": 1 }, "print": true, "returnModel": false, "returnPDF": false }
+```
+```
+{ "commandType": 24, "commandInput": { "name": "paymentName", "payment_type": 1, "value": 1, "payment_without_terminal": true } }
+```
+```
+{ "commandType": 26, "commandInput": { "canceled": true }, "print": true, "returnPDF": false, "returnQR": true }
 ```
 =============================================================================================================================================================================================================================================================================================================
 ================================================================================
