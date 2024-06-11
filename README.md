@@ -475,6 +475,29 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
 { "commandInput": { "canceled": false }, "commandType": 26, "print": true, "returnPDF": false }
 ```
+Paragon anulowany
+
+```
+{ "commandType": 16 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": false, "count": 1.0, "name": "Towar-A", "price": 1.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": true, "count": 1.0, "name": "Towar-A", "price": 1.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": false, "count": 1.0, "name": "Opakowanie zwrotne", "price": 10.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "item": { "advanceRemain": 0.0, "canceled": true, "count": 1.0, "name": "Opakowanie zwrotne", "price": 10.0, "ptu": "A", "unit": "szt." }, "type": 1 }, "commandType": 22 }
+```
+```
+{ "commandInput": { "payment_type": 1, "value": 0.0 }, "commandType": 24 }
+```
+```
+{ "commandType": 26, "commandInput": { "canceled": false }, "print": true, "returnPDF": false, "returnQR": true }
+```
 =============================================================================================================================================================================================================================================================================================================
 I-2_15_PA	PA - paragon całkowicie wystornowany i następnie anulowany
 ================================================================================
@@ -494,7 +517,7 @@ Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 { "commandInput": { "payment_type": 1, "value": 1.0 }, "commandType": 24 }
 ```
 ```
-{ "commandInput": { "canceled": false }, "commandType": 26, "print": true, "returnPDF": false }
+{ "commandInput": { "canceled": true }, "commandType": 26, "print": true, "returnPDF": false }
 ```
 =============================================================================================================================================================================================================================================================================================================
 ================================================================================
