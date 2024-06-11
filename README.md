@@ -129,10 +129,9 @@ Wystawić PA/PR na 9,00* Towar-C, z cena 1 PLN, zastosowac opust 3 PLN od pozycj
 Platnosc gotowka w kwocie 6 PLN, wplata 10 PLN (oczekiwana reszta 4 PLN).
 Wystawić 2x PA: z podsumowaniem i bez podsumowania (jezeli to mozliwe).
 ```
-{ "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 9, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "", "discount": {"name": "Opust", "type": 0, "unit": 1, "value": 3} }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 10, "payment_without_terminal": true }, "commandType": 24 }, "4": {"commandType": 26} } }
+{ "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 9, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "", "discount": {"name": "Opust", "type": 0, "unit": 1, "value": 3} }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 10, "payment_without_terminal": true }, "commandType": 24 }, "4": {"commandType": 26, "commandInput": {"canceled": false}, "print": true, "returnPDF": false, "returnQR": true } } }
 ```
 
-```
 ```
 { "commandType": 30, "commandInput": { "1": {"commandType": 16}, "2": { "commandInput": { "item": { "advanceRemain": 0, "canceled": false, "count": 9, "name": "Towar-C", "price": 1, "ptu": "C", "unit": "", "discount": {"name": "Opust", "type": 0, "unit": 1, "value": 3} }, "type": 1 }, "commandType": 22, "print": true, "returnModel": false, "returnPDF": false }, "3": { "commandInput": { "name": "paymentName", "payment_type": 1, "value": 10, "payment_without_terminal": true }, "commandType": 24 }, "4": {"commandType": 26, "commandInput": {"canceled": true}, "print": true, "returnPDF": false, "returnQR": true } } }
 ```
